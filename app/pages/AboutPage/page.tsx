@@ -23,7 +23,7 @@ export default function AboutPage() {
       title: "Sertifikat Kelulusan Puwardhika Bootcamp",
       desc: "Penghargaan kelulusan sebagai bukti penyelesaian program belajar.",
       image: "/certificates/kelulusan.png", // ganti dengan path asli kamu
-      link: "https://drive.google.com/kelulusan", // ganti dengan link asli kamu 
+      link: "/", // ganti dengan link asli kamu 
     },
   ];
 

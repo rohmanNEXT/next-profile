@@ -135,7 +135,7 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
               <button
                onClick={() =>
                   window.open(
-                    "https://wa.me/6285646831030?text=Hi%20I%20want%20to%20discuss%20a%20project",
+                    "/",
                     "_blank"
                   )} 
                 className="px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm"
