@@ -388,7 +388,7 @@ export default function SettingsModal() {
                 border: `1px solid ${getColor("border")}`,
               }}
             >
-              Background
+              Bg
             </div>
             <div
               className="p-3 rounded-lg text-center text-xs"
