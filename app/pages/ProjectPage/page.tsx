@@ -44,8 +44,7 @@ export default function Projects() {
         "Website organisasi edukasi lingkungan untuk menyajikan informasi kegiatan yayasan dan kampanye pelestarian alam.",
       tags: ["Frontend"],
       image: "organization website",
-      codeUrl:
-        "https://github.com/rohmanNEXT/YayasanMangroveLestari",
+      codeUrl: "https://github.com/rohmanNEXT/YayasanMangroveLestari",
       demoUrl: "https://yml-organation.vercel.app/",
     },
   ];
@@ -115,7 +114,7 @@ export default function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col flex-1 p-5 sm:p-7 md:p-8 space-y-4 pt-0">
+                <div className="flex flex-col flex-1 p-4 sm:p-6 md:p-8 lg:p-10 space-y-4 pt-0">
                   <div className="space-y-2">
                     <h3
                       className="text-xl sm:text-2xl font-semibold"
