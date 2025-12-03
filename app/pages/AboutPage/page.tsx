@@ -179,7 +179,7 @@ buat juga.
                   </div>
 
                   {/* Content */}
-                  <div className="p-4 space-y-4 flex flex-col items-center text-center">
+                  <div className="p-4 space-y-4 flex flex-col items-center text-center pt-4 md:lg:xl:pt-5">
                     <h3
                       className="text-lg sm:text-xl font-semibold"
                       style={{ color: getColor("text") }}
