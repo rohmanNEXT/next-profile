@@ -1,5 +1,6 @@
 // import { ThemeProvider } from './context/ThemeContext';
 import SettingsModal from './components/SettingsModal';
+import HomePage from './pages/HomePage/page';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <main className="pt-20">
           {/* Halaman utama di sini */}
         </main>
+        <HomePage />
         <SettingsModal />
       </div>
    

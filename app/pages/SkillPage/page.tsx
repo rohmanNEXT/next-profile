@@ -22,11 +22,9 @@ import {
   SiContentful,
   SiStripe,
   SiCss3,
-  SiCssdesignawards,
-  SiCssmodules,
-  SiFramer,
-  SiTwinmotion,
+   SiTwinmotion,
   SiGoogleanalytics,
+  SiLinear,
 } from "react-icons/si";
 import {
   Database,
@@ -43,6 +41,7 @@ import {
   Bug,
   BookOpen,
 } from "lucide-react";
+import { FaHome } from "react-icons/fa"; 
 
 export default function SkillPage() {
   //  const { getColor } = useThemeStore();
@@ -124,6 +123,8 @@ export default function SkillPage() {
           icon: SiGoogleanalytics,
           years: "Beginner",
         },
+        { name: "Htc Color Picker", icon: FaHome, years: "Beginner", isLucide: true },
+
       ],
     },
   ];
