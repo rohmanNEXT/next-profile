@@ -115,7 +115,7 @@ export default function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col flex-1 p-6 sm:p-7 md:p-8 space-y-4 pt-6 xl:lg:pt-0">
+                <div className="flex flex-col flex-1 p-6 sm:p-7 md:p-8 space-y-4 pt-6 xl:lg:pt-5">
                   <div className="space-y-2">
                     <h3
                       className="text-xl sm:text-2xl font-semibold"
