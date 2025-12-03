@@ -26,7 +26,7 @@ export default function FloatingNavbar() {
 
   // NAV DESKTOP (full)
   const navItemsDesktop = [
-    { icon: Home, path: "/pages/HomePage", label: "Home" },
+    { icon: Home, path: "/", label: "Home" },
     { icon: User, path: "/pages/AboutPage", label: "About" },
     { icon: Award, path: "/pages/SkillPage", label: "Skill" },
     { icon: Briefcase, path: "/pages/ExperiencePage", label: "Experience" },
