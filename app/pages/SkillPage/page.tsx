@@ -156,7 +156,7 @@ export default function SkillPage() {
             className="text-center mb-16 max-w-2xl mx-auto"
             style={{ color: getColor("textSecondary") }}
           >
-            Experience since 2025 with strong dedication to learning and growth
+           Experience since 2023 to 2025 with strong dedication to learning and growth
           </p>
           {/* Skill Categories */}
           <div className="space-y-10">
