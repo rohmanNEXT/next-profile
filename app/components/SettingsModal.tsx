@@ -38,11 +38,17 @@ export default function SettingsModal() {
     }
   };
 
+  // const applyColor = () => {
+  //   if (themeMode === "hct") {
+  //     setPrimaryColor(tempColor);
+  //     localStorage.setItem("primaryColor", tempColor);
+  //     document.cookie = `primaryColor=${tempColor}; path=/; max-age=31536000`;
+  //   }
+  // };
+  
   const applyColor = () => {
     if (themeMode === "hct") {
-      setPrimaryColor(tempColor);
-      localStorage.setItem("primaryColor", tempColor);
-      document.cookie = `primaryColor=${tempColor}; path=/; max-age=31536000`;
+      setPrimaryColor(tempColor); // cukup ini, store sudah urus localStorage
     }
   };
 
@@ -75,21 +81,20 @@ export default function SettingsModal() {
 
       {/* Modal content */}
       <div
-  className="
+        className="
     relative w-full max-w-2xl
     rounded-2xl p-8
     shadow-2xl max-h-[90vh] overflow-y-auto
     backdrop-blur-2xl
   "
-  style={{
-    background: `${getColor("cardBg")}A6`, // A6 ≈ 65% transparency
-    border: `1px solid ${getColor("border")}80`, // 80 = transparency border
-    WebkitBackdropFilter: "blur(24px)",
-    backdropFilter: "blur(24px)",
-  }}
-  onClick={(e) => e.stopPropagation()}
->
-
+        style={{
+          background: `${getColor("cardBg")}A6`, // A6 ≈ 65% transparency
+          border: `1px solid ${getColor("border")}80`, // 80 = transparency border
+          WebkitBackdropFilter: "blur(24px)",
+          backdropFilter: "blur(24px)",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
@@ -121,59 +126,65 @@ export default function SettingsModal() {
         </div>
 
         {/* Theme Mode Tabs */}
-       <div className="mb-8">
-  <label
-    className="block text-sm mb-3"
-    style={{ color: getColor("textSecondary") }}
-  >
-    Theme Mode
-  </label>
-  <div className="flex flex-wrap gap-3">
+        <div className="mb-8">
+          <label
+            className="block text-sm mb-3"
+            style={{ color: getColor("textSecondary") }}
+          >
+            Theme Mode
+          </label>
+          <div className="flex flex-wrap gap-3">
+            {/* Light */}
+            <button
+              onClick={() => setThemeMode("light")}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all duration-200"
+              style={{
+                background:
+                  themeMode === "light"
+                    ? getColor("primary")
+                    : getColor("surface"),
+                color: themeMode === "light" ? onPrimary : getColor("text"),
+                border: `1px solid ${getColor("border")}`,
+              }}
+            >
+              <Sun size={16} strokeWidth={1.5} />
+              <span>Light</span>
+            </button>
 
-    {/* Light */}
-    <button
-      onClick={() => setThemeMode("light")}
-      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all duration-200"
-      style={{
-        background: themeMode === "light" ? getColor("primary") : getColor("surface"),
-        color: themeMode === "light" ? onPrimary : getColor("text"),
-        border: `1px solid ${getColor("border")}`,
-      }}
-    >
-      <Sun size={16} strokeWidth={1.5} />
-      <span>Light</span>
-    </button>
+            {/* Dark */}
+            <button
+              onClick={() => setThemeMode("dark")}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all duration-200"
+              style={{
+                background:
+                  themeMode === "dark"
+                    ? getColor("primary")
+                    : getColor("surface"),
+                color: themeMode === "dark" ? onPrimary : getColor("text"),
+                border: `1px solid ${getColor("border")}`,
+              }}
+            >
+              <Moon size={16} strokeWidth={1.5} />
+              <span>Dark</span>
+            </button>
 
-    {/* Dark */}
-    <button
-      onClick={() => setThemeMode("dark")}
-      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all duration-200"
-      style={{
-        background: themeMode === "dark" ? getColor("primary") : getColor("surface"),
-        color: themeMode === "dark" ? onPrimary : getColor("text"),
-        border: `1px solid ${getColor("border")}`,
-      }}
-    >
-      <Moon size={16} strokeWidth={1.5} />
-      <span>Dark</span>
-    </button>
-
-    {/* HCT */}
-    <button
-      onClick={() => setThemeMode("hct")}
-      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all duration-200"
-      style={{
-        background: themeMode === "hct" ? getColor("primary") : getColor("surface"),
-        color: themeMode === "hct" ? onPrimary : getColor("text"),
-        border: `1px solid ${getColor("border")}`,
-      }}
-    >
-      <Palette size={16} strokeWidth={1.5} />
-      <span>HCT Color</span>
-    </button>
-  </div>
-
-
+            {/* HCT */}
+            <button
+              onClick={() => setThemeMode("hct")}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all duration-200"
+              style={{
+                background:
+                  themeMode === "hct"
+                    ? getColor("primary")
+                    : getColor("surface"),
+                color: themeMode === "hct" ? onPrimary : getColor("text"),
+                border: `1px solid ${getColor("border")}`,
+              }}
+            >
+              <Palette size={16} strokeWidth={1.5} />
+              <span>HCT Color</span>
+            </button>
+          </div>
         </div>
 
         {/* HCT Color Picker */}

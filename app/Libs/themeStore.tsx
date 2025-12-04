@@ -118,7 +118,9 @@ interface ThemeStore {
   a11yMode: boolean;
   isSettingsOpen: boolean;
   primaryColor: string;
+  hydrated: boolean; // 🔥 penanda sudah sync localStorage
 
+  hydrate: () => void; // 🔥 load dari localStorage setelah mount
   setThemeMode: (mode: ThemeMode) => void;
   toggleA11y: () => void;
   setIsSettingsOpen: (state: boolean) => void;
@@ -146,10 +148,31 @@ export const useThemeStore = create<ThemeStore>()((set, get) => ({
       ? JSON.parse(localStorage.getItem("a11yMode") || "false")
       : false,
   isSettingsOpen: false,
-  primaryColor:
-    (typeof window !== "undefined" && localStorage.getItem("primaryColor")) ||
-    "#7C3AED",
+  primaryColor: (() => {
+    if (typeof window === "undefined") return "#7C3AED";
 
+    const saved = localStorage.getItem("primaryColor");
+    return saved ? saved : "#7C3AED"; // fallback aman
+  })(),
+  hydrated: false,
+
+  hydrate: () => {
+    if (typeof window === "undefined") return;
+
+    const savedTheme = localStorage.getItem("themeMode");
+    const savedColor = localStorage.getItem("primaryColor");
+    const savedA11y = localStorage.getItem("a11yMode");
+
+    set({
+      themeMode:
+        savedTheme === "light" || savedTheme === "dark" || savedTheme === "hct"
+          ? savedTheme
+          : "dark",
+      primaryColor: savedColor || "#7C3AED",
+      a11yMode: savedA11y ? JSON.parse(savedA11y) : false,
+      hydrated: true,
+    });
+  },
   // Setter dengan auto persist
   setThemeMode: (mode) => {
     localStorage.setItem("themeMode", mode);
@@ -200,9 +223,14 @@ export const useThemeStore = create<ThemeStore>()((set, get) => ({
 
     // DARK
     if (themeMode === "dark") {
+      const hsl = hexToHSL(primaryColor) ?? { h: 260, s: 65, l: 55 };
       const colors: Record<ColorKey, string> = {
-        primary: "#7C3AED",
-        accent: "#8B5CF6",
+        primary: primaryColor,
+        accent: hslToHex({
+          h: (hsl.h + 20) % 360,
+          s: Math.min(hsl.s + 10, 90),
+          l: Math.min(hsl.l + 5, 70),
+        }),
         background: "#050816",
         surface: "#0B1020",
         cardBg: "#111827",
@@ -214,9 +242,14 @@ export const useThemeStore = create<ThemeStore>()((set, get) => ({
     }
 
     // LIGHT
+    const hslLight = hexToHSL(primaryColor) ?? { h: 260, s: 65, l: 55 };
     const colors: Record<ColorKey, string> = {
       primary: "#7C3AED",
-      accent: "#6D28D9",
+      accent: hslToHex({
+        h: (hslLight.h + 20) % 360,
+        s: Math.min(hslLight.s + 10, 90),
+        l: Math.min(hslLight.l + 10, 80),
+      }),
       background: "#F9FAFB",
       surface: "#FFFFFF",
       cardBg: "#FFFFFF",

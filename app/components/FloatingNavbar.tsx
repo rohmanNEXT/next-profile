@@ -12,15 +12,25 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useThemeStore, getReadableTextColor } from "../Libs/themeStore";
+import { useEffect, useState } from "react";
 
 export default function FloatingNavbar() {
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-
   const getColor = useThemeStore((s) => s.getColor);
+
   const setIsSettingsOpen = useThemeStore((s) => s.setIsSettingsOpen);
   useThemeStore((s) => s.primaryColor);
   useThemeStore((s) => s.themeMode);
   useThemeStore((s) => s.a11yMode);
+
+  useEffect(() => {
+    const id = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(id);
+  }, []);
+
+  // ⛔️ Jangan render apa-apa sebelum client siap
+  if (!mounted) return null;
 
   const lineColor = getReadableTextColor(getColor("background"));
 
@@ -40,7 +50,7 @@ export default function FloatingNavbar() {
     { icon: User, path: "/pages/AboutPage", label: "About" },
     { icon: Award, path: "/pages/SkillPage", label: "Skill" },
     { icon: Presentation, path: "/pages/ProjectPage", label: "Project" },
-      ];
+  ];
 
   const primary = getColor("primary");
   const onPrimary = getReadableTextColor(primary);

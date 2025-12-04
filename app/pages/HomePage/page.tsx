@@ -82,7 +82,7 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
           </motion.h1>
 
           {/* Title */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
@@ -97,10 +97,10 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             Full Stack Web Developer
             </div>
 
-          </motion.p>
+          </motion.div>
 
           {/* Description */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -108,7 +108,7 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             style={{ color: getColor("textSecondary") }}
           >
            Menciptakan pengalaman digital yang elegan dengan teknologi modern. Spesialisasi dalam membangun aplikasi web yang responsif dan berpusat pada pengguna.
-          </motion.p>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div

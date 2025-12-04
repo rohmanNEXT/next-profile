@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SettingsModal from "./components/SettingsModal";
 import ThemeWatcher from "./Libs/themeWatcher";
-
+import ThemeHydrator from "./pages/Hydrate";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,7 +34,10 @@ export default function RootLayout({
         <ThemeWatcher />
          <FloatingNavbar />
       <SettingsModal />
-        {children}
+       <ThemeHydrator>
+          {children}
+        </ThemeHydrator>
+      
       </body>
     </html>
   );
