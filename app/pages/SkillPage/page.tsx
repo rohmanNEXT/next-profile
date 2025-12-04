@@ -25,6 +25,7 @@ import {
    SiTwinmotion,
   SiGoogleanalytics,
   SiLinear,
+  SiHtml5,
 } from "react-icons/si";
 import {
   Database,
@@ -59,7 +60,7 @@ export default function SkillPage() {
         { name: "Cypress", icon: SiCypress, years: "0/6 Th" },
         { name: "Css", icon: SiCss3, years: "2 Th" },
         { name: "Css Animation", icon: SiCss3, years: "0/6 Th" },
-        { name: "Html", icon: SiCss3, years: "4 Th" }, 
+        { name: "Html", icon: SiHtml5, years: "4 Th" }, 
       ],
     },
     {
