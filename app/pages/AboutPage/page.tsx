@@ -3,8 +3,7 @@ import { useThemeStore } from "../../Libs/themeStore";
 import { motion } from "motion/react";
 import { Award, Briefcase, Coffee } from "lucide-react";
 import Image from "next/image";
-import { SiGoogledrive, SiSkillshare } from "react-icons/si";
-import { title } from "process";
+import { SiGoogledrive } from "react-icons/si";
 
 export default function AboutPage() {
   const getColor = useThemeStore((s) => s.getColor);

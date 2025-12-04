@@ -47,7 +47,7 @@ ${formData.message}
     `;
 
     const mailto = `mailto:bluekraken9999@gmail.com?subject=${encodeURIComponent(
-      subject,
+      subject
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailto;
@@ -90,7 +90,8 @@ ${formData.message}
 
   return (
     <div
-      className="min-h-screen p-7 md:pl-32 py-16 pb-24 md:pb-16"
+      // className="min-h-screen p-7 md:pl-32 py-16 pb-24 md:pb-16"
+      className="min-h-screen px-4 sm:px-6 pt-20 pb-24 md:pl-32 md:pr-10 overflow-x-hidden"
       style={{ background: getColor("background") }}
     >
       <div className="max-w-5xl mx-auto">
@@ -131,10 +132,7 @@ ${formData.message}
                 border: `1px solid ${getColor("border")}`,
               }}
             >
-              <h2
-                className="text-2xl mb-6"
-                style={{ color: getColor("text") }}
-              >
+              <h2 className="text-2xl mb-6" style={{ color: getColor("text") }}>
                 Send Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
