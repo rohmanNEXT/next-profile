@@ -90,7 +90,7 @@ ${formData.message}
 
   return (
     <div
-      className="min-h-screen p-6 md:pl-32 py-16 pb-24 md:pb-16"
+      className="min-h-screen p-7 md:pl-32 py-16 pb-24 md:pb-16"
       style={{ background: getColor("background") }}
     >
       <div className="max-w-5xl mx-auto">

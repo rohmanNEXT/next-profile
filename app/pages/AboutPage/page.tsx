@@ -12,7 +12,7 @@ export default function AboutPage() {
   const a11yMode = useThemeStore((s) => s.a11yMode);
 
   const stats = [
-    { icon: Award, value: "2+", label: "Years Experience" },
+    { icon: Award, value: "3+", label: "Years Experience" },
     { icon: Briefcase, value: "1+", label: "Jobs Projects Completed" },
     { icon: Coffee, value: "0+", label: "Cups of Coffee" },
   ];
