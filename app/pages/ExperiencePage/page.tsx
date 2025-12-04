@@ -5,11 +5,11 @@ import { Briefcase, MapPin, Calendar } from "lucide-react";
 import CircularText from "../../components/CircularText";
 
 export default function ExperiencePage() {
-//  const { getColor } = useTheme();
-const getColor = useThemeStore((s) => s.getColor);
+  //  const { getColor } = useTheme();
+  const getColor = useThemeStore((s) => s.getColor);
   const primaryColor = useThemeStore((s) => s.primaryColor);
-    const a11yMode = useThemeStore((s) => s.a11yMode);
-  
+  const a11yMode = useThemeStore((s) => s.a11yMode);
+
   const experiences = [
     {
       role: "Perternakan ikan",
@@ -21,7 +21,7 @@ const getColor = useThemeStore((s) => s.getColor);
         "Membantu mengelola dan merawat kolam ikan, termasuk pemberian pakan, pemantauan kualitas air, dan pengendalian penyakit ikan.",
       achievements: [
         "Helping fish ecosystem to be better",
-        "Helping Costumer to buy healthy fish", 
+        "Helping Costumer to buy healthy fish",
       ],
     },
     {
@@ -35,7 +35,7 @@ const getColor = useThemeStore((s) => s.getColor);
       achievements: [
         "Built 8 customer-facing applications",
         "Improved API response time by 60%",
-        "Gagal dapat job Connector sebab sakit"
+        "Gagal dapat job Connector sebab sakit",
       ],
     },
     // {
@@ -77,15 +77,14 @@ const getColor = useThemeStore((s) => s.getColor);
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-      {/* Circular Animated Text */}
-<motion.div
-  initial={{ opacity: 0, scale: 0 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
->
-  <CircularText />
-</motion.div>
-
+          {/* Circular Animated Text */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
+          >
+            <CircularText />
+          </motion.div>
 
           {/* Title */}
           <h1
@@ -95,7 +94,7 @@ const getColor = useThemeStore((s) => s.getColor);
             Work Experience
           </h1>
           <div
-            className="w-24 h-1 rounded-full mx-auto mb-16"
+            className="w-24 h-1 rounded-full mx-auto mb-24 lg:xl:mb-16"
             style={{ background: getColor("primary") }}
           />
 
@@ -103,7 +102,7 @@ const getColor = useThemeStore((s) => s.getColor);
           <div className="relative">
             {/* Center Vertical Line */}
             <div
-              className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2"
+              className="absolute left-1/2 -top-6 lg:xl:top-0 bottom-0 w-0.5 -translate-x-1/2 opacity-60"
               style={{ background: getColor("border") }}
             />
 
@@ -119,7 +118,7 @@ const getColor = useThemeStore((s) => s.getColor);
                 >
                   {/* Timeline Dot (Center) */}
                   <div
-                    className="absolute left-1/2 top-8 w-4 h-4 -translate-x-1/2 rounded-full z-10"
+                    className="absolute left-1/2 -top-8 lg:xl:top-8 w-4 h-4 -translate-x-1/2 rounded-full z-50 opacity-60"
                     style={{
                       background: getColor("primary"),
                       border: `3px solid ${getColor("background")}`,
