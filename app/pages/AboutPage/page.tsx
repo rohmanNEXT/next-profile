@@ -23,7 +23,7 @@ export default function AboutPage() {
       title: "Sertifikat Kelulusan Puwardhika Bootcamp",
       desc: "Penghargaan kelulusan sebagai bukti penyelesaian program belajar.",
       image: "/certificates/kelulusan.png", // ganti dengan path asli kamu
-      link: "/", // ganti dengan link asli kamu 
+      link: "/", // ganti dengan link asli kamu
     },
   ];
 
@@ -66,23 +66,25 @@ export default function AboutPage() {
               className="text-base leading-relaxed mb-6"
               style={{ color: getColor("textSecondary") }}
             >
-             Perkenalkan, saya Muhammad Rachman (rohman), seorang Web Developer lulusan
-Purwadhika Digital School yang memiliki keahlian dalam React, Next.js, dan JavaScript. Saya
-memiliki ketertarikan besar terhadap pengembangan web yang bersih, cepat, responsif, serta
-berfokus pada pengalaman pengguna (UI/UX) dan optimasi performa.
-
+              Perkenalkan, saya Muhammad Rachman (rohman), seorang Web Developer
+              lulusan Purwadhika Digital School yang memiliki keahlian dalam
+              React, Next.js, dan JavaScript. Saya memiliki ketertarikan besar
+              terhadap pengembangan web yang bersih, cepat, responsif, serta
+              berfokus pada pengalaman pengguna (UI/UX) dan optimasi performa.
             </p>
             <p
               className="text-base leading-relaxed"
               style={{ color: getColor("textSecondary") }}
             >
-             Saya terbiasa mengembangkan antarmuka interaktif menggunakan integrasi API, manajemen
-state, dan penerapan praktik pengembangan modern untuk menghasilkan aplikasi yang efisien
-dan mudah digunakan. Selain itu, saya senang terus belajar dan beradaptasi dengan teknologi
-baru agar setiap proyek yang saya kerjakan selalu relevan dan inovatif.
-Saya percaya kemampuan dan semangat belajar saya dapat memberikan kontribusi positif bagi
-perusahaan. Sebagai bahan pertimbangan, saya lampirkan portofolio proyek yang pernah saya
-buat juga.
+              Saya terbiasa mengembangkan antarmuka interaktif menggunakan
+              integrasi API, manajemen state, dan penerapan praktik pengembangan
+              modern untuk menghasilkan aplikasi yang efisien dan mudah
+              digunakan. Selain itu, saya senang terus belajar dan beradaptasi
+              dengan teknologi baru agar setiap proyek yang saya kerjakan selalu
+              relevan dan inovatif. Saya percaya kemampuan dan semangat belajar
+              saya dapat memberikan kontribusi positif bagi perusahaan. Sebagai
+              bahan pertimbangan, saya lampirkan portofolio proyek yang pernah
+              saya buat juga.
             </p>
           </motion.div>
 

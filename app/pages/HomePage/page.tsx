@@ -180,9 +180,21 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
                 }}
               >
                 <Mail size={18} strokeWidth={1.5} />
-                <span>Contact Me</span>
-              </button>
+                <span>Contact Me</span> 
+              </button> 
+             
             </div>
+             <button
+                onClick={() => (window.location.href = "/pages/ExperiencePage")}
+                className="px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm flex items-center gap-2"
+                style={{
+                  background: primary,
+                  color: onPrimary,
+                }}
+              >
+                <Briefcase size={18} strokeWidth={1.5} />
+                <span>Work Experience</span>
+              </button>
           </motion.div>
 
           {/* Social Icons */}
