@@ -128,24 +128,54 @@ interface ThemeStore {
 }
 
 export const useThemeStore = create<ThemeStore>()((set, get) => ({
-  themeMode: "dark", // default: dark mode
-  a11yMode: false,
+  // Load default from localStorage first, if exists
+  themeMode: (() => {
+    if (typeof window === "undefined") return "dark";
+
+    const saved = localStorage.getItem("themeMode");
+
+    // Validasi nilai literal union sebelum return
+    if (saved === "light" || saved === "dark" || saved === "hct") {
+      return saved;
+    }
+    return "dark"; // fallback
+  })(),
+
+  a11yMode:
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("a11yMode") || "false")
+      : false,
   isSettingsOpen: false,
-  primaryColor: "#7C3AED",
+  primaryColor:
+    (typeof window !== "undefined" && localStorage.getItem("primaryColor")) ||
+    "#7C3AED",
 
-  setThemeMode: (mode) => set({ themeMode: mode }),
+  // Setter dengan auto persist
+  setThemeMode: (mode) => {
+    localStorage.setItem("themeMode", mode);
+    set({ themeMode: mode });
+  },
 
-  toggleA11y: () => set((s) => ({ a11yMode: !s.a11yMode })),
+  toggleA11y: () =>
+    set((state) => {
+      const newValue = !state.a11yMode;
+      localStorage.setItem("a11yMode", JSON.stringify(newValue));
+      return { a11yMode: newValue };
+    }),
 
   setIsSettingsOpen: (v) => set({ isSettingsOpen: v }),
 
-  setPrimaryColor: (v) => set({ primaryColor: v }),
+  setPrimaryColor: (color) => {
+    localStorage.setItem("primaryColor", color);
+    set({ primaryColor: color });
+  },
 
+  // COLOR GENERATOR
   getColor: (type: ColorKey) => {
     const { primaryColor, themeMode, a11yMode } = get();
     const hsl = hexToHSL(primaryColor) ?? { h: 260, s: 65, l: 55 };
 
-    // ============= MODE HCT =============
+    // HCT MODE
     if (themeMode === "hct") {
       const colors: Record<ColorKey, string> = {
         primary: primaryColor,
@@ -168,7 +198,7 @@ export const useThemeStore = create<ThemeStore>()((set, get) => ({
       return colors[type];
     }
 
-    // ============= MODE DARK =============
+    // DARK
     if (themeMode === "dark") {
       const colors: Record<ColorKey, string> = {
         primary: "#7C3AED",
@@ -183,7 +213,7 @@ export const useThemeStore = create<ThemeStore>()((set, get) => ({
       return colors[type];
     }
 
-    // ============= MODE LIGHT =============
+    // LIGHT
     const colors: Record<ColorKey, string> = {
       primary: "#7C3AED",
       accent: "#6D28D9",
