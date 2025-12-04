@@ -57,8 +57,9 @@ export default function SkillPage() {
         { name: "Vite", icon: SiVite, years: "1 Th" },
         { name: "React", icon: SiReact, years: "1 Th" },
         { name: "Cypress", icon: SiCypress, years: "0/6 Th" },
-        { name: "Css", icon: SiCss3, years: "1 Th" },
+        { name: "Css", icon: SiCss3, years: "2 Th" },
         { name: "Css Animation", icon: SiCss3, years: "0/6 Th" },
+        { name: "Html", icon: SiCss3, years: "4 Th" }, 
       ],
     },
     {

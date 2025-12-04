@@ -282,7 +282,7 @@ const getColor = useThemeStore((s) => s.getColor);
               Total Experience
             </h2>
             <p className="text-4xl mb-2" style={{ color: getColor("text") }}>
-              2+ Years
+              3+ Years
             </p>
             <p style={{ color: getColor("textSecondary") }}>
               in Web Development
