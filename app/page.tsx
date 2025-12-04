@@ -7,7 +7,7 @@ export default function Home() {
  
       <div className="min-h-screen transition-colors duration-300">
 
-        <main className="pt-20">
+        <main className="pt-0">
           {/* Halaman utama di sini */}
         </main>
         <HomePage />
