@@ -88,7 +88,7 @@ export default function ExperiencePage() {
 
           {/* Title */}
           <h1
-            className="text-4xl md:text-5xl text-center mb-6"
+            className="text-4xl md:text-5xl text-center mb-6 font-semibold"
             style={{ color: getColor("text") }}
           >
             Work Experience

@@ -68,14 +68,14 @@ export default function Projects() {
           {/* Header */}
           <div className="text-center space-y-4 pb-2">
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl tracking-tight pt-8"
+              className="text-3xl sm:text-4xl md:text-5xl tracking-tight pt-8 font-semibold mb-6"
               style={{ color: getColor("text") }}
             >
               Featured Projects
             </h2>
 
             <div
-              className="w-24 h-1 rounded-full mx-auto mb-6 mt-6"
+              className="w-24 h-1 rounded-full mx-auto mb-6"
               style={{ background: getColor("primary") }}
             />
 

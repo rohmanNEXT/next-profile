@@ -28,7 +28,7 @@ export default function AboutPage() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-6 md:pl-32 pb-24 md:pb-6"
+      className="min-h-screen flex items-center justify-center p-0 md:pl-32 pb-24 md:pb-6"
       style={{ background: getColor("background") }}
     >
       <div className="max-w-4xl w-full pb-18">
@@ -36,110 +36,122 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="max-h-screen"
         >
-          {/* Title */}
-          <h1
-            className="text-4xl md:text-5xl text-center mb-6 pt-20"
-            style={{ color: getColor("text") }}
-          >
-            About Me
-          </h1>
-
-          <div
-            className="w-24 h-1 rounded-full mx-auto mb-16"
-            style={{ background: getColor("primary") }}
-          />
-
-          {/* Main Content Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="p-8 md:p-12 rounded-2xl mb-8 text-center"
-            style={{
-              background: getColor("cardBg"),
-              border: `1px solid ${getColor("border")}`,
-            }}
-          >
-            <p
-              className="text-base leading-relaxed mb-6"
-              style={{ color: getColor("textSecondary") }}
+          <div className="min-h-screen">
+            {/* Title */}
+            <h1
+              className="text-4xl md:text-5xl text-center font-semibold mb-4 pt-20"
+              style={{ color: getColor("text") }}
             >
-              Perkenalkan, saya Muhammad Rachman (rohman), seorang Web Developer
-              lulusan Purwadhika Digital School yang memiliki keahlian dalam
-              React, Next.js, dan JavaScript. Saya memiliki ketertarikan besar
-              terhadap pengembangan web yang bersih, cepat, responsif, serta
-              berfokus pada pengalaman pengguna (UI/UX) dan optimasi performa.
-            </p>
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: getColor("textSecondary") }}
-            >
-              Saya terbiasa mengembangkan antarmuka interaktif menggunakan
-              integrasi API, manajemen state, dan penerapan praktik pengembangan
-              modern untuk menghasilkan aplikasi yang efisien dan mudah
-              digunakan. Selain itu, saya senang terus belajar dan beradaptasi
-              dengan teknologi baru agar setiap proyek yang saya kerjakan selalu
-              relevan dan inovatif. Saya percaya kemampuan dan semangat belajar
-              saya dapat memberikan kontribusi positif bagi perusahaan. Sebagai
-              bahan pertimbangan, saya lampirkan portofolio proyek yang pernah
-              saya buat juga.
-            </p>
-          </motion.div>
+              About Me
+            </h1>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
-                className="p-6 rounded-2xl text-center"
-                style={{
-                  background: getColor("cardBg"),
-                  border: `1px solid ${getColor("border")}`,
-                }}
+            <div
+              className="w-24 h-1 rounded-full mx-auto mb-16"
+              style={{ background: getColor("primary") }}
+            />
+
+            {/* Main Content Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="p-8 md:p-20 rounded-2xl mb-8 text-center"
+              style={{
+                background: getColor("cardBg"),
+                border: `1px solid ${getColor("border")}`,
+              }}
+            >
+              <p
+                className="text-base leading-relaxed mb-5"
+                style={{ color: getColor("textSecondary") }}
               >
-                <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
-                  style={{ background: getColor("primary") + "20" }}
+                Hai, saya Muhammad Rachman (Rohman), seorang Web Developer yang
+                fokus pada React, Next.js, dan JavaScript. Saya suka membangun
+                aplikasi web yang bersih, cepat, dan nyaman digunakan, dengan
+                perhatian pada pengalaman pengguna (UI/UX).
+              </p>
+              <p
+                className="text-base leading-relaxed mb-5"
+                style={{ color: getColor("textSecondary") }}
+              >
+                Saya terbiasa mengerjakan antarmuka interaktif menggunakan
+                integrasi API, state management, dan praktik pengembangan modern
+                untuk menghasilkan aplikasi yang efisien dan responsif. Saya
+                juga terus belajar teknologi baru agar keterampilan saya selalu
+                berkembang dan relevan.
+              </p>
+              <p
+                className="text-base leading-relaxed"
+                style={{ color: getColor("textSecondary") }}
+              >
+                {" "}
+                Berikut beberapa proyek yang pernah saya kerjakan:{" "}
+                <a
+                  onClick={() =>
+                    (window.location.href = "/pages/ProjectPage")
+                  }
+                  className="text-red-400 hover:underline px-0.5"
                 >
-                  <stat.icon
-                    size={24}
-                    style={{ color: getColor("primary") }}
-                    strokeWidth={1.5}
-                  />
-                </div>
-                <div
-                  className="text-3xl mb-2"
-                  style={{ color: getColor("text") }}
-                >
-                  {stat.value}
-                </div>
-                <div
-                  className="text-sm"
-                  style={{ color: getColor("textSecondary") }}
-                >
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  Lihat Project
+                </a>
+              </p>
+            </motion.div>
 
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
+                  className="p-6 rounded-2xl text-center"
+                  style={{
+                    background: getColor("cardBg"),
+                    border: `1px solid ${getColor("border")}`,
+                  }}
+                >
+                  <div
+                    className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
+                    style={{ background: getColor("primary") + "20" }}
+                  >
+                    <stat.icon
+                      size={24}
+                      style={{ color: getColor("primary") }}
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <div
+                    className="text-3xl mb-2"
+                    style={{ color: getColor("text") }}
+                  >
+                    {stat.value}
+                  </div>
+                  <div
+                    className="text-sm"
+                    style={{ color: getColor("textSecondary") }}
+                  >
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
           {/* Penghargaan Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-24"
+            className="min-h-screen"
           >
             <div
               className="md:text-3xl mb-3 flex items-center justify-center gap-2"
-              style={{ color: getColor("primary") }}
+              style={{ color: getColor("text") }}
             >
-              <Award size={26} strokeWidth={1.5} />
-              <div className="font-medium text-xl">Penghargaan</div>
+              <Award size={20} strokeWidth={1} />
+              <h2 className="text-xl font-semibold">Penghargaan</h2>
             </div>
 
             <div

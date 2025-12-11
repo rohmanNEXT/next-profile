@@ -102,7 +102,7 @@ ${formData.message}
         >
           {/* Title */}
           <h1
-            className="text-4xl md:text-5xl text-center mb-6 pt-12"
+            className="text-4xl md:text-5xl text-center mb-6 pt-12 font-semibold"
             style={{ color: getColor("text") }}
           >
             Get In Touch
@@ -298,14 +298,14 @@ ${formData.message}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-full transition-all duration-300 hover:scale-110"
+                      className="p-2 rounded-full transition-all duration-300 hover:scale-110"
                       style={{
                         background: getColor("surface"),
                         border: `1px solid ${getColor("border")}`,
                       }}
                     >
                       <social.icon
-                        size={20}
+                        size={24}
                         style={{ color: getColor("primary") }}
                         strokeWidth={1.5}
                       />

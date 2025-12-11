@@ -22,7 +22,7 @@ import {
   SiContentful,
   SiStripe,
   SiCss3,
-   SiTwinmotion,
+  SiTwinmotion,
   SiGoogleanalytics,
   SiLinear,
   SiHtml5,
@@ -42,7 +42,7 @@ import {
   Bug,
   BookOpen,
 } from "lucide-react";
-import { FaHome } from "react-icons/fa"; 
+import { FaHome } from "react-icons/fa";
 
 export default function SkillPage() {
   //  const { getColor } = useThemeStore();
@@ -60,7 +60,7 @@ export default function SkillPage() {
         { name: "Cypress", icon: SiCypress, years: "0/6 Th" },
         { name: "Css", icon: SiCss3, years: "2 Th" },
         { name: "Css Animation", icon: SiCss3, years: "0/6 Th" },
-        { name: "Html", icon: SiHtml5, years: "4 Th" }, 
+        { name: "Html", icon: SiHtml5, years: "4 Th" },
       ],
     },
     {
@@ -125,8 +125,12 @@ export default function SkillPage() {
           icon: SiGoogleanalytics,
           years: "Beginner",
         },
-        { name: "Htc Color Picker", icon: FaHome, years: "Beginner", isLucide: true },
-
+        {
+          name: "Htc Color Picker",
+          icon: FaHome,
+          years: "Beginner",
+          isLucide: true,
+        },
       ],
     },
   ];
@@ -145,7 +149,7 @@ export default function SkillPage() {
           {/* Title */}
 
           <h1
-            className="text-4xl md:text-5xl text-center mb-6 pt-12"
+            className="text-4xl md:text-5xl text-center mb-6 pt-12 font-semibold"
             style={{ color: getColor("text") }}
           >
             Skills & Technologies
@@ -158,10 +162,10 @@ export default function SkillPage() {
             className="text-center mb-16 max-w-2xl mx-auto"
             style={{ color: getColor("textSecondary") }}
           >
-           Experience since 2023 to 2025 with strong dedication to learning and growth
+            Experience since 2023 to 2025
           </p>
           {/* Skill Categories */}
-          <div className="space-y-10">
+          <div className="space-y-12">
             {skillCategories.map((category, catIndex) => (
               <motion.div
                 key={category.title}
@@ -177,7 +181,7 @@ export default function SkillPage() {
                   {category.title}
                 </h2>
 
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-wrap justify-center gap-6">
                   {category.skills.map((skill, index) => (
                     <motion.div
                       key={skill.name}

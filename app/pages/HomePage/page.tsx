@@ -18,13 +18,13 @@ export default function HomePage() {
   
   
 const [imageError, setImageError] = useState(false);
-const profileImage = ""; // kosong
+const profileImage = "/next.jpeg"; // kosong
 
 const hasImage = Boolean(profileImage?.trim()) && !imageError;
 
    return (
     <div
-      className="min-h-screen flex items-center justify-center p-6 md:pl-32 pb-36 md:pb-6 pt-40"
+      className="min-h-screen flex items-center justify-center p-6 md:pl-32 pb-36 md:pb-6"
       style={{ background: getColor("background") }}
     >
       <div className="max-w-2xl w-full text-center">
@@ -75,7 +75,7 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl md:text-5xl mb-3"
+            className="text-4xl md:text-5xl mb-4 font-semibold"
             style={{ color: getColor("text") }}
           >
             Muhammad Rachman
@@ -86,14 +86,14 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-lg mb-6"
+            className="text-lg mb-4"
             style={{ color: getColor("textSecondary") }}
           >
             <div
-              className="md:text-lg mb-3 flex items-center justify-center gap-2"
+              className="md:text-base mb-3 flex items-center justify-center gap-2"
               style={{ color: getColor("primary") }}
             >
-              <Briefcase size={18} strokeWidth={1.5} />
+              <Briefcase size={16} strokeWidth={1} />
             Full Stack Web Developer
             </div>
 
@@ -107,7 +107,7 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             className="text-base max-w-xl mb-8 leading-relaxed"
             style={{ color: getColor("textSecondary") }}
           >
-           Menciptakan pengalaman digital yang elegan dengan teknologi modern. Spesialisasi dalam membangun aplikasi web yang responsif dan berpusat pada pengguna.
+           Membangun aplikasi web modern yang responsif, efisien, dan fokus pada pengalaman pengguna.
           </motion.div>
 
           {/* CTA Buttons */}
@@ -115,13 +115,13 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-col items-center gap-4 mb-8"
+            className="flex flex-col items-center gap-4 mb-8 font-medium"
           >
             {/* Top Row */}
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => (window.location.href = "/pages/ProjectPage")}
-                className="px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm flex items-center gap-2"
+                className="px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm flex items-center gap-2 font-medium"
                 style={{
                   background: primary,
                   color: onPrimary,
@@ -202,7 +202,7 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex gap-3"
+            className="flex gap-4"
           >
             {[
               { icon: Github, href: "https://github.com/rohmanNEXT" },
@@ -214,14 +214,14 @@ const hasImage = Boolean(profileImage?.trim()) && !imageError;
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full transition-all duration-300 hover:scale-110"
+                className="p-2 rounded-full transition-all duration-300 hover:scale-110"
                 style={{
                   background: getColor("surface"),
                   border: `1px solid ${getColor("border")}`,
                 }}
               >
                 <social.icon
-                  size={20}
+                  size={24}
                   style={{ color: getColor("primary") }}
                   strokeWidth={1.5}
                 />
