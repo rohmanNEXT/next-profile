@@ -28,7 +28,7 @@ export default function AboutPage() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-0 md:pl-32 pb-24 md:pb-6 p-8"
+      className="min-h-screen flex items-center justify-center md:pl-32 pb-24 md:pb-6 p-8"
       style={{ background: getColor("background") }}
     >
       <div className="max-w-4xl w-full pb-18">
@@ -144,7 +144,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="min-h-screen"
+            className="min-h-screen pt-28 sm:pt-0"
           >
             <div
               className="md:text-3xl mb-3 flex items-center justify-center gap-2"
